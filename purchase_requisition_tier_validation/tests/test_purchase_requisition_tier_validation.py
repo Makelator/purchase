@@ -4,11 +4,13 @@
 from odoo.tests import common
 
 
-class TestHrExpenseTierValidation(common.TransactionCase):
+class TestPurchaseRequisitionTierValidation(common.TransactionCase):
     def setUp(self):
-        super(TestHrExpenseTierValidation, self).setUp()
-        self.tier_definition = self.env['tier.definition']
+        super().setUp()
+        self.tier_definition = self.env["tier.definition"]
 
     def test_get_tier_validation_model_names(self):
-        self.assertIn('purchase.requisition',
-                      self.tier_definition._get_tier_validation_model_names())
+        self.assertIn(
+            "purchase.requisition",
+            self.tier_definition._get_tier_validation_model_names(),
+        )
